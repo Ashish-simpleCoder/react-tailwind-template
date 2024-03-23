@@ -12,7 +12,16 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": ".",
+    "paths": {
+      "@pages/*":["./src/pages/*"],
+      "@comp/*":["./src/components/comp/*"],
+      "@ui/*":["./src/components/ui/*"],
+      "@layout/*":["./src/components/layout/*"],
+      "@lib/*":["./src/lib/*"],
+      "@utils/*":["./src/components/utils/*"],
+    }
   },
   "include": ["src"]
 }

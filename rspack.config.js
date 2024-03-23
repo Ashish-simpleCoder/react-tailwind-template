@@ -1,6 +1,7 @@
 const rspack = require("@rspack/core");
 const refreshPlugin = require("@rspack/plugin-react-refresh");
 const isDev = process.env.NODE_ENV === "development";
+const path  =require("path")
 /**
  * @type {import('@rspack/cli').Configuration}
  */
@@ -10,7 +11,15 @@ module.exports = {
 		main: "./src/main.tsx"
 	},
 	resolve: {
-		extensions: ["...", ".ts", ".tsx", ".jsx"]
+		extensions: ["...", ".ts", ".tsx", ".jsx"],
+		alias:{
+			"@pages":path.resolve(__dirname, "./src/pages"),
+			"@comp":path.resolve(__dirname, "./src/components/comp"),
+			"@ui":path.resolve(__dirname, "./src/components/ui"),
+			"@layout":path.resolve(__dirname, "./src/components/layout"),
+			"@lib":path.resolve(__dirname, "./src/lib"),
+			"@utils":path.resolve(__dirname, "./src/utils"),
+		}
 	},
 	module: {
 		rules: [
